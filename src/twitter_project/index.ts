@@ -11,20 +11,20 @@ import { projectRoute } from "./urls";
 import { tweetRouter } from "../tweet_app/urls/urls";
 
 
-//TODO
-    //3. твиты(посты) доделать как у арчакова + подумать куда можно вынести некотурую логику из createTweetView и из файла urls.ts
-    //4. написать пагинацию при получении твитов 
-    //5. закомитить изминения на гит
-    //6. смотерть archakov и продолжать пилить твиттер
-//MORE
+//TODO:
+    //3. твиты(посты) доделать как у арчакова + провести небольшой codereview приложения tweet_app
+    //4. смотерть archakov и продолжать пилить твиттер
+//MORE:
     //2. надо вынести логику из startServer в модель юзера потом сделаю mongoClient
     //ts-mongoose
     //7. можно сверстать email письмо как в твиттере
-    //https://stackoverflow.com/questions/63221271/email-confirmation-in-node-js тут про удаление через некоторое время
-//CONSTANT
-    //1. token send with cookie
-    //4. смотреть дмитирия подгорного
+//TUTORIALS:    
     // глянуть ооп на js and node js как их применять всё в плейлисте js+
+    //https://stackoverflow.com/questions/63221271/email-confirmation-in-node-js тут про удаление через некоторое время
+//CONSTANT:
+    //1. не забывать коммитить изменнения на гит
+    //2. token send with cookie
+    //3. смотреть дмитирия подгорного
 const app = express()
 app.use(cors());
 app.use(express.json())
