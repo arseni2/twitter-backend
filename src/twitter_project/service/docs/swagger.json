@@ -1,0 +1,125 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "twitter clone docs",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "auth"
+    }
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "login user with password, email or name",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "401": {
+            "description": "UnAthurozed",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "_"
+      }
+    },
+    "/users/create": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "create user",
+        "description": "create user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data_both": {
+                    "type": "string"
+                  },
+                  "about": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "slug": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "user create successul",
+            "content": {}
+          },
+          "400": {
+            "description": "user not created send a correct data",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "_"
+      }
+    },
+    "/verify?hash": {
+      "get": {
+        "summary": "verify user",
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "query",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "return success",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
